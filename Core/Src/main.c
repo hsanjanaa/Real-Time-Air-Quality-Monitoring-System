@@ -2,18 +2,7 @@
 /**
   ******************************************************************************
   * @file           : main.c
-  * @brief          : ICU Ambient Control System - Main Program
-  ******************************************************************************
-  * CORRECTIONS APPLIED:
-  *  1. Renamed smoke_detected -> air_quality_alert (MQ135 is NOT a smoke sensor)
-  *  2. Non-destructive LCD: line1 always shows T/H, line2 shows status/alert
-  *  3. DHT11 persistent failure counter (3 strikes) triggers buzzer + fault msg
-  *  4. MQ135_RO defined as calibratable constant with clear comment
-  *  5. All sprintf -> snprintf for buffer safety
-  *  6. Fixed I2C scan UART transmit byte count (was 17, correct is 16)
-  *  7. UART log now includes DHT error state when sensor fails
-  *  8. Alert types (temp_high, air_quality, sensor_fault) shown simultaneously
-  ******************************************************************************
+  * @brief          : AQI Monitor - Main Program
   * @attention
   *
   * Copyright (c) 2026 STMicroelectronics.
@@ -212,8 +201,7 @@ int main(void)
 
     /* ---- 3. Determine alert conditions ---- */
     /*
-     * FIX: Renamed smoke_detected -> air_quality_alert.
-     * MQ135 detects CO2/NH3/NOx — NOT smoke. Calling it smoke
+
 
      */
     bool air_quality_alert = (ppm > 200.0f);
