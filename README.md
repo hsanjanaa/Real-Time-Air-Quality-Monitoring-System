@@ -1,4 +1,4 @@
-# 🌫️ EcoWatch: Real-Time Environmental Monitoring and AQI Alert System
+# 🌫️ EcoWatch: Real-Time AQI Alert System
 
 ## Overview
 EcoWatch is an STM32-based environmental monitoring system that measures air quality, temperature, and humidity in real time. Sensor data is transmitted via UART to a Python application for visualization and uploaded to ThingSpeak for cloud-based monitoring and analysis.
